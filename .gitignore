@@ -1,0 +1,13 @@
+app/config/google-recaptcha.php
+database
+database/*
+vendor
+vendor/*
+composer.lock
+public/analytics
+public/analytics/*
+public/files
+public/files/*
+packages
+packages/*
+resources/log/*

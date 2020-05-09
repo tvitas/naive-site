@@ -1,0 +1,157 @@
+/* HTML bigger fonts */
+html {
+	font: 400 18px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	background: #fff;
+	color: #444;
+	background-image: -webkit-radial-gradient(100% 100%,center,#fff,#fff);
+	background-image: radial-gradient(100% 100% at center,#fff,#fff)
+}
+
+/* Body with background pattern */
+body {
+	background-image: url('../img/noise-white-pattern.jpg');
+	background-position: top left;
+	background-repeat: repeat;
+}
+
+/* Remove left border blockquote */
+blockquote {
+    border-left: none;
+}
+
+/*Inherit parent*/
+em {
+    color: inherit;
+}
+
+/* Navbar without border radius 
+#navigation .uk-navbar {
+	border-radius: 0;
+	border-left-color: rgba(0,0,0,0);
+	border-right-color: rgba(0,0,0,0);
+}
+	Note: Better add uk-navbar-attached class to navbar;
+*/
+
+/* Bigger navbar item font */
+#navigation .uk-navbar-nav>li>a {
+	font-size: inherit;
+}
+
+/* Navbar brand smaller font*/
+#navigation .uk-navbar-brand {
+    font-size: 16px;
+    color: #444;
+    text-decoration: none;
+}
+
+/*Dropdown hover background*/
+.uk-nav-dropdown>li>a:focus, .uk-nav-dropdown>li>a:hover {
+    background: #e28327/*#8cc14c*/;
+    color: #fff;
+    outline: 0;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.05);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+    border-color: rgba(0,0,0,.21);
+    border-radius: 3px;
+}
+
+/* Header, footer*/
+#header-block.header-block,
+#footer-block.footer-block {
+	padding: 15px;
+	text-shadow: 0 0 5px Black;
+}
+
+#header-block.header-block {
+	background-image: -webkit-linear-gradient(top, #e28327, #330000);
+	background-image: linear-gradient(to bottom, #e28327, #330000);	
+}
+
+#footer-block.footer-block {
+	background-image: -webkit-linear-gradient(bottom, #e28327, #330000);
+	background-image: linear-gradient(to top, #e28327, #330000);
+	min-height: 160px;
+}
+
+/*Top*/
+#top.top {
+	border-bottom: solid 1px rgba(0,0,0,.1);
+	padding-bottom: 15px;
+}
+
+/* Content */
+#content.content {
+	min-height: calc(100vh - 324px);
+}
+
+#content img {
+	box-shadow: 2px 2px 5px #ccc;
+	border-radius: 4px;
+}
+
+#content-front .content-zebra-even {
+	padding-top: 15px;
+	background: rgba(255,255,255,.8);
+	border-bottom: solid 1px rgba(0,0,0,.1)
+}
+
+#content-front .content-zebra-odd {
+	padding-top: 15px;
+	background: rgba(220,220,220,.5);
+	border-bottom: solid 1px rgba(0,0,0,.1)
+}
+
+
+#content-front img {
+	box-shadow: 2px 2px 5px #ccc;
+}
+
+/* Offcanvas */
+#offcanvas-bar .uk-nav-offcanvas .uk-nav-sub {
+    border-top: none;
+    box-shadow: none;
+    font-size: 16px;
+}
+
+/* Bigger padding left of offcanvas sub */
+#offcanvas-bar ul.uk-nav-sub {
+    padding: 5px 0 5px 20px;
+}
+
+/* Active subelement of offcanvas sub */
+#offcanvas-bar .uk-nav-offcanvas .uk-nav-sub li.uk-active > a {
+ 	padding: 5px 5px 5px 5px;
+    background: #1a1a1a;
+	color: #fff;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+}
+
+/*Inline icon in the link*/
+a>i[class*=uk-icon-] {
+	margin-right: 5px;
+}
+
+/*h2.uk-accordion, a bit restyled*/
+h2.uk-active.uk-accordion-title::before {
+    content: "\f07c"" ";
+    font-family: 'FontAwesome';
+}
+
+h2.uk-accordion-title::before {
+    content: "\f07b"" ";
+    font-family: 'FontAwesome';
+}
+
+h2.uk-accordion-title {
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding: inherit;
+    background: inherit;
+	font-size: 24px;
+	line-height: 30px;
+    border: inherit;
+    cursor: pointer;
+}
