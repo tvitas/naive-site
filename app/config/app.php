@@ -19,5 +19,5 @@ return [
     // Cache
     'cache' => true,
     // Cache TTL in seconds
-    'cache_ttl' => 3600,
+    'cache_ttl' => 600,
 ];

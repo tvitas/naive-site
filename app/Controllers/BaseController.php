@@ -175,6 +175,29 @@ abstract class BaseController
     }
 
     /**
+     * Returns fresh or cached page
+     * @return string HTML markup
+     */
+    protected function getPage()
+    {
+        $page = '';
+        $cacheKey = hash('md5', $this->pageUri);
+        if ($this->env->get('cache', false)) {
+            if ($this->cache->has($cacheKey)) {
+                $page = $this->cache->get($cacheKey);
+            } else {
+                $this->buildPage();
+                $page = $this->show();
+                $this->cache->set($cacheKey, $page, $this->env->get('cache_ttl', 300));
+            }
+        } else {
+            $this->buildPage();
+            $page = $this->show();
+        }
+        return $page;
+    }
+
+    /**
      * Collection of variables for using in the page
      * @return void
      */

@@ -18,7 +18,6 @@ class MembersController extends BaseController
             $this->redirectTo();
         }
         $this->repo->setPath($this->pageUri);
-        $this->buildPage();
-        return $this->show();
+        return $this->getPage();
     }
 }
