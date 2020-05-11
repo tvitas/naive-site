@@ -13,7 +13,20 @@ class SiteController extends BaseController
         ('/' === $this->pageUri) ? $front = $this->env->get('front') : $front = '';
         $this->repo->setPath($this->pageUri . $front);
         $this->pageUri = $this->pageUri . $front;
-        $this->buildPage();
-        return $this->show();
+        $page = '';
+        $cacheKey = hash('md5', $this->pageUri);
+        if ($this->env->get('cache', false)) {
+            if ($this->cache->has($cacheKey)) {
+                $page = $this->cache->get($cacheKey);
+            } else {
+                $this->buildPage();
+                $page = $this->show();
+                $this->cache->set($cacheKey, $page, $this->env->get('cache_ttl', 300));
+            }
+        } else {
+            $this->buildPage();
+            $page = $this->show();
+        }
+        return $page;
     }
 }

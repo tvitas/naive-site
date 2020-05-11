@@ -16,4 +16,8 @@ return [
     'template_suffix' => '.html.php',
     // Protected uris
     'protected' => ['members'],
+    // Cache
+    'cache' => true,
+    // Cache TTL in seconds
+    'cache_ttl' => 3600,
 ];

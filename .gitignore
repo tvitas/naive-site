@@ -4,10 +4,9 @@ database/*
 vendor
 vendor/*
 composer.lock
-public/analytics
-public/analytics/*
 public/files
 public/files/*
 packages
 packages/*
-resources/log/*
+resources/var/log/*
+resources/var/cache/*

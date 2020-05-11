@@ -7,7 +7,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Urodoz\Truncate\TruncateService;
 
 use tvitas\SiteRepo\Traits\XpathQueryTrait;
+use tvitas\FileCache\FileCache;
 use tvitas\SiteRepo\SiteRepo;
+
 
 use App\Services\EnvironmentService;
 use App\Services\HttpErrorService;
@@ -62,6 +64,12 @@ abstract class BaseController
      * @var \Urodoz\Truncate\TruncateService
      */
     protected $truncator;
+
+    /**
+     * Injected file FileCache object
+     * @var \tvitas\FileCache\FileCache
+     */
+    protected $cache;
 
     /**
      * Current URI
@@ -148,7 +156,8 @@ abstract class BaseController
         Session $session,
         Request $request,
         SiteRepo $repo,
-        View $view
+        View $view,
+        FileCache $cache
     )
 
     {
@@ -159,6 +168,7 @@ abstract class BaseController
         $this->view = $view;
         $this->httpError = $httpErrorService;
         $this->truncator = $truncator;
+        $this->cache = $cache;
         $this->pageUri = $this->request->getPathInfo();
         $this->layout = $this->env->get('layout', 'default');
         $this->metaInf = $this->env->get('menu_inf', 'menu-inf.xml');

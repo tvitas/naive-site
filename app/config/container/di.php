@@ -11,7 +11,10 @@ return [
         );
         return $confs;
     },
-    'app.logfile' => __DIR__ . '/../../../resources/log/app.log',
+    // Logging
+    'app.logfile' => __DIR__ . '/../../../resources/var/log/app.log',
+    // Caching
+    'app.cachedir' => __DIR__ . '/../../../resources/var/cache',
     // Protected controller
     'controller.members' => 'App\Controllers\MembersController',
     // Autowiring HttpFoundation
@@ -30,6 +33,9 @@ return [
     // Autowiring logger
     'tvitas\NaiveLogger\NaiveLogger' => DI\autowire()
         ->constructorParameter('logFile', DI\get('app.logfile')),
+    // Autowiring logger
+    'tvitas\FileCache\FileCache' => DI\autowire()
+        ->constructorParameter('cacheDir', DI\get('app.cachedir')),
     // Autowiring site repo
     'tvitas\SiteRepo\SiteRepo' => function() {
         tvitas\SiteRepo\Environment::getInstance()->load(__DIR__ . '/../../config/site-repo.php');
