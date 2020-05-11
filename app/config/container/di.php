@@ -15,6 +15,7 @@ return [
     'app.logfile' => __DIR__ . '/../../../resources/var/log/app.log',
     // Caching
     'app.cachedir' => __DIR__ . '/../../../resources/var/cache',
+    'app.cachettl' => 600,
     // Protected controller
     'controller.members' => 'App\Controllers\MembersController',
     // Autowiring HttpFoundation
@@ -35,7 +36,8 @@ return [
         ->constructorParameter('logFile', DI\get('app.logfile')),
     // Autowiring logger
     'tvitas\FileCache\FileCache' => DI\autowire()
-        ->constructorParameter('cacheDir', DI\get('app.cachedir')),
+        ->constructorParameter('cacheDir', DI\get('app.cachedir'))
+        ->constructorParameter('ttl', DI\get('app.cachettl')),
     // Autowiring site repo
     'tvitas\SiteRepo\SiteRepo' => function() {
         tvitas\SiteRepo\Environment::getInstance()->load(__DIR__ . '/../../config/site-repo.php');

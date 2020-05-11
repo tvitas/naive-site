@@ -188,7 +188,7 @@ abstract class BaseController
             } else {
                 $this->buildPage();
                 $page = $this->show();
-                $this->cache->set($cacheKey, $page, $this->env->get('cache_ttl', 300));
+                $this->cache->set($cacheKey, $page);
             }
         } else {
             $this->buildPage();

@@ -18,6 +18,4 @@ return [
     'protected' => ['members'],
     // Cache
     'cache' => true,
-    // Cache TTL in seconds
-    'cache_ttl' => 600,
 ];
