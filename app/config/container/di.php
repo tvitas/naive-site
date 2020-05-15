@@ -34,7 +34,7 @@ return [
     // Autowiring logger
     'tvitas\NaiveLogger\NaiveLogger' => DI\autowire()
         ->constructorParameter('logFile', DI\get('app.logfile')),
-    // Autowiring logger
+    // Autowiring file cache
     'tvitas\FileCache\FileCache' => DI\autowire()
         ->constructorParameter('cacheDir', DI\get('app.cachedir'))
         ->constructorParameter('ttl', DI\get('app.cachettl')),
