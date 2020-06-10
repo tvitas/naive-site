@@ -4,6 +4,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
 
 use tvitas\SiteRepo\SiteRepo;
+use tvitas\FileCache\FileCache;
 use tvitas\NaiveLogger\NaiveLogger;
 
 use App\Services\EnvironmentService as Env;
@@ -56,6 +57,12 @@ class AuthController
      */
     private $logger;
 
+    /**
+     * Injected file FileCache object
+     * @var \tvitas\FileCache\FileCache
+     */
+    protected $cache;
+
     public function __construct
     (
         Request $request,
@@ -63,7 +70,8 @@ class AuthController
         SiteRepo $repo,
         NaiveLogger $logger,
         Env $env,
-        View $view
+        View $view,
+        FileCache $cache
     )
     {
         $this->request = $request;
@@ -72,6 +80,7 @@ class AuthController
         $this->repo = $repo;
         $this->logger = $logger;
         $this->env = $env;
+        $this->cache = $cache;
     }
 
     /**
@@ -108,6 +117,7 @@ class AuthController
         $this->session->set('auth', false);
         $this->logger->info('User {user} logged out.', ['user' => $this->session->get('user')['name']]);
         $this->session->set('user', null);
+        $this->cache->clear();
         $this->redirectTo('/');
     }
 
