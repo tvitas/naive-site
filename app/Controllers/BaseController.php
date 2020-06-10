@@ -183,7 +183,7 @@ abstract class BaseController
         $page = '';
         $cacheKey = hash('md5', $this->pageUri);
         if ($this->env->get('cache', false)) {
-            if ($this->cache->has($cacheKey)) {
+            if ($this->cache->has($cacheKey) and false === $this->session->get('auth')) {
                 $page = $this->cache->get($cacheKey);
             } else {
                 $this->buildPage();

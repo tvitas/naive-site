@@ -139,6 +139,7 @@ class App
             $sessionToken = $this->session->get('__token__');
             if (false === ($token === $sessionToken)) {
                 $this->sendHttpError(403);
+
             }
         }
     }
