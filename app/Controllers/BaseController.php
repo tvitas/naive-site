@@ -10,12 +10,10 @@ use tvitas\SiteRepo\Traits\XpathQueryTrait;
 use tvitas\FileCache\FileCache;
 use tvitas\SiteRepo\SiteRepo;
 
-
 use App\Services\EnvironmentService;
 use App\Services\HttpErrorService;
 use App\Traits\RandomStringTrait;
 use App\Views\View;
-
 
 abstract class BaseController
 {
