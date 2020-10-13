@@ -118,7 +118,7 @@ class AuthController
         $this->logger->info('User {user} logged out.', ['user' => $this->session->get('user')['name']]);
         $this->session->set('user', null);
         $this->cache->clear();
-        $this->redirectTo('/');
+        $this->redirectTo(BASEURL . '/');
     }
 
     /**
@@ -164,7 +164,7 @@ class AuthController
                 ]
             );
             $this->logger->info('User {user} logged in.', ['user' => $this->session->get('user')['name']]);
-            $this->redirectTo($this->session->get('get_in', '/'));
+            $this->redirectTo($this->session->get('get_in', BASEURL . '/'));
         }
         $this->redirectTo();
     }

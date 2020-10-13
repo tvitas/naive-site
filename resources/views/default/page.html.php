@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="pU0tbrXdBHuHOeJJc4J_vJIf3aSHH4s9Sx5Zhwu6I_c" />
 <?php if ($metaDescription): ?>
 <meta name="description" content="<?= $metaDescription ?>">
 <?php endif;?>

@@ -17,5 +17,5 @@ return [
     // Protected uris
     'protected' => ['members'],
     // Cache
-    'cache' => true,
+    'cache' => false,
 ];

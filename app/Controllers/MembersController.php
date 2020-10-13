@@ -14,7 +14,7 @@ class MembersController extends BaseController
     public function __invoke()
     {
         if (null === $this->session->get('auth') or false === $this->session->get('auth')) {
-            $this->session->set('get_in', $this->pageUri);
+            $this->session->set('get_in', BASEURL . $this->pageUri);
             $this->redirectTo();
         }
         $this->repo->setPath($this->pageUri);

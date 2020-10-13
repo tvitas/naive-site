@@ -134,18 +134,21 @@ a>i[class*=uk-icon-] {
 	margin-right: 5px;
 }
 
-/*h2.uk-accordion, a bit restyled*/
-h2.uk-active.uk-accordion-title::before {
-    content: "\f07c"" ";
+/* h2.uk-accordion, a bit restyled */
+h2.uk-active.uk-accordion-title::before,
+h3.uk-active.uk-accordion-title::before {
+    content: "\f115"" ";
     font-family: 'FontAwesome';
 }
 
-h2.uk-accordion-title::before {
-    content: "\f07b"" ";
+h2.uk-accordion-title::before,
+h3.uk-accordion-title::before {
+    content: "\f114"" ";
     font-family: 'FontAwesome';
 }
 
-h2.uk-accordion-title {
+h2.uk-accordion-title,
+h3.uk-accordion-title {
     margin-top: inherit;
     margin-bottom: inherit;
     padding: inherit;
